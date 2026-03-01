@@ -1,30 +1,43 @@
 import { useFormContext } from 'react-hook-form'
-import { HStack, Text } from '@chakra-ui/react'
+import { HStack, Text, Box } from '@chakra-ui/react'
 import type { TaskFormValues } from '../schema'
 
 export function AssignModeField() {
+  const { register, watch, setValue } = useFormContext<TaskFormValues>()
+  const assignMode = watch('assignMode')
+  const isTeams = assignMode === 'teams'
 
-  const { register } = useFormContext<TaskFormValues>()
+  const toggle = () => {
+    setValue('assignMode', isTeams ? 'members' : 'teams')
+  }
 
   return (
-    <HStack gap={4}>
-      <HStack as="label" cursor="pointer" gap={2}>
-        <input
-          type="radio"
-          value="members"
-          {...register('assignMode')}
-        />
-        <Text fontSize="sm">Участники</Text>
+    <HStack gap={3}>
+      <HStack gap={2} cursor="pointer" onClick={toggle}>
+        <Box
+          w="36px"
+          h="20px"
+          borderRadius="full"
+          bg={isTeams ? '#7C3AED' : 'gray.300'}
+          position="relative"
+          transition="background 0.2s"
+        >
+          <Box
+            position="absolute"
+            top="2px"
+            left={isTeams ? '18px' : '2px'}
+            w="16px"
+            h="16px"
+            borderRadius="full"
+            bg="white"
+            boxShadow="sm"
+            transition="left 0.2s"
+          />
+        </Box>
+        <Text fontSize="xs" color="gray.500">Назначить на команду</Text>
       </HStack>
 
-      <HStack as="label" cursor="pointer" gap={2}>
-        <input
-          type="radio"
-          value="teams"
-          {...register('assignMode')}
-        />
-        <Text fontSize="sm">Команды</Text>
-      </HStack>
+      <input type="hidden" {...register('assignMode')} />
     </HStack>
   )
 }

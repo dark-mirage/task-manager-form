@@ -3,7 +3,6 @@ import type { Member, Team, TaskFormValues } from "../types";
 
 const delay = (ms: number) => new Promise(res => setTimeout(res, ms))
 
-// поиск участников по строчке, debounce
 export const searchMembers = async (query: string): Promise<Member[]> => {
   await delay(400)
   if (!query) return MOCK_MEMBERS

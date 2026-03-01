@@ -1,5 +1,6 @@
 import { MOCK_MEMBERS, MOCK_TEAMS } from "../constants/mockData";
-import type { Member, Team, TaskFormValues } from "../types";
+import type { Member, Team} from "../types";
+import type { TaskFormValues } from "../components/TaskForm/schema"
 
 const delay = (ms: number) => new Promise(res => setTimeout(res, ms))
 
@@ -19,7 +20,7 @@ export const searchTeams = async (query: string): Promise<Team[]> => {
   )
 }
 
-export const submitTaskForm = async (data: TaskFormValues): Promise<{ success: boolean}> => {
+export const submitTask = async (data: TaskFormValues): Promise<{ success: boolean}> => {
   await delay(600)
   console.log('Task submitted:', data)
   return { success: true}

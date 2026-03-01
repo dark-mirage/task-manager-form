@@ -20,16 +20,3 @@ export interface Topic {
 }
 export type AssignMode = 'members' | 'teams'
 
-export interface TaskFormValues {
-  context: string 
-  assignMode: AssignMode
-  isRoutine: boolean
-  routinePeriod: string
-  routineDescription: string
-  assignees: string[]
-  dueData: string
-  topic: string
-  tags: string[]
-  files: FileList | null
-}
-

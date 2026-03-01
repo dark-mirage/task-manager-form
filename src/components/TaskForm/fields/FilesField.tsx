@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { useFormContext } from 'react-hook-form'
-import { Field, Text, Box, HStack } from '@chakra-ui/react'
+import { Field, Text, HStack } from '@chakra-ui/react'
 import type { TaskFormValues } from '../schema'
 
 export function FilesField() {

@@ -48,7 +48,7 @@ export function AssigneesField() {
         <HStack
           border="1px solid"
           borderColor={errors.assignees ? 'red.300' : isOpen ? '#7C3AED' : 'gray.200'}
-          borderRadius="lg"
+          borderRadius="xl"
           px={3}
           py={2}
           bg="white"

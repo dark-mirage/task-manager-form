@@ -48,7 +48,7 @@ export function TaskForm() {
         as="form"
         onSubmit={methods.handleSubmit(onSubmit)}
         w="100%"
-        maxW="480px"
+        maxW="600px"
         bg="white"
         borderRadius="2xl"
         boxShadow="xl"

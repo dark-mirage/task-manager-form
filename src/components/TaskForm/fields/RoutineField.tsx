@@ -63,7 +63,7 @@ export function RoutineField() {
             <HStack
               border="1px solid"
               borderColor={errors.routinePeriod ? 'red.300' : isPeriodOpen ? '#7C3AED' : 'gray.200'}
-              borderRadius="lg"
+              borderRadius="xl"
               px={3}
               py={2}
               bg="white"

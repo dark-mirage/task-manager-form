@@ -50,10 +50,9 @@ export function AssigneesField() {
           borderColor={errors.assignees ? 'red.300' : 'gray.200'}
           borderRadius="lg"
           px={3}
-          py={2}
           bg="white"
           cursor="text"
-          minH="40px"
+          minH="10px"
           flexWrap="wrap"
           gap={2}
           onClick={() => setIsOpen(true)}
